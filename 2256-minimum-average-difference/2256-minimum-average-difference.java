@@ -4,7 +4,7 @@ class Solution {
         int l = nums.length;  
         int index = 0;
         long min = Integer.MAX_VALUE, sum = 0, leftsum = 0, rightsum = 0;
-        System.out.println("length "+l);
+      
         
         
         if(l%2 == 0){

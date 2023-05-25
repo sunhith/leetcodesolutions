@@ -4,21 +4,23 @@ class Solution {
         int l = nums.length;  
         int index = 0;
         long min = Integer.MAX_VALUE, sum = 0, leftsum = 0, rightsum = 0;
-      
+      for (int j = 0; j < l; j++) {
+                sum = sum + nums[j] ;
+            }
         
         
-        if(l%2 == 0){
-            for (int j = 0; j < l/2; j++) {
-                sum = sum + nums[j] + nums[l-j-1];
-            }
-        }
-        else{
-            int j;
-            for (j = 0; j < l/2; j++) {
-                sum = sum + nums[j] + nums[l-j-1];
-            }
-            sum += nums[j]; 
-        }
+        // if(l%2 == 0){
+        //     for (int j = 0; j < l/2; j++) {
+        //         sum = sum + nums[j] + nums[l-j-1];
+        //     }
+        // }
+        // else{
+        //     int j;
+        //     for (j = 0; j < l/2; j++) {
+        //         sum = sum + nums[j] + nums[l-j-1];
+        //     }
+        //     sum += nums[j]; 
+        // }
         
         for (int i = 0; i < l; i++) {
             leftsum += nums[i];

@@ -14,7 +14,6 @@ class Solution {
             long num1= (long)((float)diff[i]/(i+1));
             long num2 =(long)((float)(sum-diff[i])/(nums.length-i-1));
             long min = Math.abs(num1 -num2);
-          //  System.out.println(num1+" "+num2);
             if(min<ans){
                 ans =min;
                 idx =i;

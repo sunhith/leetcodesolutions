@@ -13,6 +13,8 @@ class Solution {
         for(int row = 1; row < m; row++){
             for(int col = 1; col < n; col++)
             {
+                // dp[row-1][col] - move up
+                // dp[row][col-1] - move left
                 dp[row][col] = dp[row-1][col] + dp[row][col-1];
             }
         }

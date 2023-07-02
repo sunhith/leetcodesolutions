@@ -51,41 +51,33 @@ class Solution {
 
 
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
-        AtomicInteger count = new AtomicInteger(0);
-        AtomicInteger count2 = new AtomicInteger(0);
         Union union = new Union(equations.size() * 2);
-
-
+        int id = 0;
+        List<String> pair;
         HashMap<String, Integer> map = new HashMap<>();
-        equations.
-        stream().
-        forEach(res ->
-                {
-                    String from = res.get(0);
-                    String to = res.get(1);
-                    if (map.get(from) == null)
-                        map.put(from, count.getAndIncrement());
-                    if (map.get(to) == null)
-                        map.put(to, count.getAndIncrement());
-                    union.findUnion(map.get(from), map.get(to), values[count2.getAndIncrement()]);
-                }
-                );
-
-        AtomicInteger count3 = new AtomicInteger(0);
+        
+        for(int i = 0; i < equations.size(); i++){
+            pair = equations.get(i);
+            String from = pair.get(0);
+            String to = pair.get(1);
+            if (map.get(from) == null)
+                map.put(from, id++);
+            if (map.get(to) == null)
+                map.put(to, id++);
+            union.findUnion(map.get(from), map.get(to), values[i]);
+        }
+        
         double result[] = new double[queries.size()];
-        queries.
-                stream().
-                forEach(res ->
-                        {
-                            String from = res.get(0);
-                            String to = res.get(1);
-                            if (!map.containsKey(from) || !map.containsKey(to)) {
-                                result[count3.getAndIncrement()] = -1.0;
-                            }
-                            else
-                             result[count3.getAndIncrement()] = union.isConnected(map.get(from), map.get(to));
-                        }
-                );
+        for(int i = 0; i < queries.size(); i++)
+        {
+            pair = queries.get(i);
+            String from = pair.get(0);
+            String to = pair.get(1);
+            if (!map.containsKey(from) || !map.containsKey(to)) 
+                result[i] = -1.0;
+            else
+                result[i] = union.isConnected(map.get(from), map.get(to));     
+        }
         return result;
     }
     

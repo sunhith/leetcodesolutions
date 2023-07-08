@@ -6,9 +6,13 @@ class Solution {
         int j = arr.length - 1;
         while(i < j){
             if(arr[i] != arr[j]){
-                char ch = (char)Math.min(arr[i], arr[j]);
-                arr[i] = ch;
-                arr[j] = ch;
+                if(arr[i] > arr[j]){
+                    arr[i] = arr[j];
+                }
+                else arr[j] = arr[i];
+                // char ch = (char)Math.min(arr[i], arr[j]);
+                // arr[i] = ch;
+                // arr[j] = ch;
             }
             i++;
             j--;

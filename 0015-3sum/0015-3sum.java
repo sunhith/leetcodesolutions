@@ -34,9 +34,9 @@ class Solution {
                     {
                         j++;
                     }
-                    while(k < n-1 && nums[k] == nums[k + 1])
+                    while(j < k  && nums[k] == nums[k + 1])
                     {
-                        k++;
+                        k--;
                     }
                 }
             }

@@ -4,7 +4,7 @@ class Solution {
         int n = nums.length;
         Arrays.sort(nums);
         //List<List<Integer>> res = new ArrayList<>();
-        List<List<Integer>> set = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
         int i,j,k;
         for ( i= 0; i < n; i++)
         {
@@ -27,7 +27,7 @@ class Solution {
                     triplet.add(nums[i]);
                     triplet.add(nums[j]);
                     triplet.add(nums[k]);
-                    set.add(triplet);
+                    list.add(triplet);
                     j++;
                     k--;
                     while(j < n && nums[j] == nums[j - 1])
@@ -41,6 +41,6 @@ class Solution {
                 }
             }
         }
-        return new ArrayList<List<Integer>>(set);
+        return list;
     }
 }

@@ -4,7 +4,7 @@ class Solution {
         int n = nums.length;
         Arrays.sort(nums);
         //List<List<Integer>> res = new ArrayList<>();
-        Set<List<Integer>> set = new HashSet<>();
+        List<List<Integer>> set = new ArrayList<>();
         int i,j,k;
         for ( i= 0; i < n; i++)
         {

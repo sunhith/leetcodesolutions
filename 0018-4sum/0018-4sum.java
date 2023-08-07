@@ -25,12 +25,8 @@ class Solution {
                     }
                     else
                     {
-                        List<Integer> sum4 = new ArrayList(4);
-                        sum4.add(nums[i]);
-                        sum4.add(nums[j]);
-                        sum4.add(nums[k]);
-                        sum4.add(nums[l]);
-                        list.add(sum4);
+                        
+                        list.add(Arrays.asList(nums[i], nums[j],nums[k],nums[l]));
                         k++;
                         l--;
                         while(k < n && nums[k] == nums[k - 1])

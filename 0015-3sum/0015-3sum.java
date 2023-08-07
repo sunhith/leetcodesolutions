@@ -17,9 +17,17 @@ class Solution {
                 int sum = nums[i] + nums[j] + nums[k];
                 if(sum < 0){
                     j++;
+                    while(j < n && nums[j] == nums[j - 1])
+                    {
+                        j++;
+                    }
                 }
                 else if(sum > 0){
                     k--;
+                    while(j < k  && nums[k] == nums[k + 1])
+                    {
+                        k--;
+                    }
                 }
                 else
                 {

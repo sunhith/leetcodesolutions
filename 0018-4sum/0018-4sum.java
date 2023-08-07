@@ -28,7 +28,6 @@ class Solution {
                     }
                     else
                     {
-                        System.out.println(sum);
                         List<Integer> sum4 = new ArrayList(4);
                         sum4.add(nums[i]);
                         sum4.add(nums[j]);

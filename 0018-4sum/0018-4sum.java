@@ -3,16 +3,17 @@ class Solution {
         int n = nums.length;
         Arrays.sort(nums);
         List<List<Integer>> list = new ArrayList<>();
-        for(int i = 0; i <= n-4; i++ )
+        int i,j,k,l;
+        for(i = 0; i <= n-4; i++ )
         {
             if (i != 0 && nums[i] == nums[i - 1])
                         continue;
-            for(int j = i+1; j <= n-3; j++){
+            for(j = i+1; j <= n-3; j++){
                 
                 if (j != i+1 && nums[j] == nums[j - 1])
                         continue;
-                int k = j+1;
-                int l = n-1;
+                k = j+1;
+                l = n-1;
                 while(k < l)
                 {
                     long sum = (long)nums[i]+ nums[j]+nums[k]+nums[l];
@@ -24,8 +25,7 @@ class Solution {
                         l--;
                     }
                     else
-                    {
-                        
+                    {                    
                         list.add(Arrays.asList(nums[i], nums[j],nums[k],nums[l]));
                         k++;
                         l--;

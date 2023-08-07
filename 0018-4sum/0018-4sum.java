@@ -6,11 +6,11 @@ class Solution {
         int i,j,k,l;
         for(i = 0; i <= n-4; i++ )
         {
-            if (i != 0 && nums[i] == nums[i - 1])
+            if (i > 0 && nums[i] == nums[i - 1])
                         continue;
             for(j = i+1; j <= n-3; j++){
                 
-                if (j != i+1 && nums[j] == nums[j - 1])
+                if (j > i+1 && nums[j] == nums[j - 1])
                         continue;
                 k = j+1;
                 l = n-1;

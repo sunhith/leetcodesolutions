@@ -2,8 +2,6 @@ class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         l1 = len(word1)
         l2 = len(word2)
-        i=0
-        j=0
         s = ""
         for i in range(max(l1,l2)):
             if l1>i:
